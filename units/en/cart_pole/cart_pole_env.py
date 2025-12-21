@@ -33,8 +33,7 @@ class CartPoleWrapper:
     def reset(self, seed=None):
         """重置环境到初始状态"""
         if seed is not None:
-            self.env.reset(seed=seed)
-            return self.env.reset()
+            return self.env.reset(seed=seed)
         return self.env.reset()
     
     def step(self, action):
