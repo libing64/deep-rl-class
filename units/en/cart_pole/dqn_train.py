@@ -173,44 +173,69 @@ class DQNAgent:
     
     def train_step(self):
         """
-        执行一步训练
+        执行一步训练 - DQN算法的核心训练步骤
+        
+        实现流程：
+        1. 从经验回放缓冲区采样一批经验
+        2. 使用主网络计算当前Q值 Q(s,a)
+        3. 使用目标网络计算目标Q值 r + γ * max Q(s',a')
+        4. 计算MSE损失并反向传播更新主网络
+        5. 定期更新目标网络参数
+        6. 衰减探索率epsilon
         
         Returns:
-            loss: 损失值（如果训练成功）
+            loss: 损失值（如果训练成功），否则返回None
         """
+        # 步骤1: 检查缓冲区是否有足够的样本
+        # 训练初期样本不足时，跳过本次训练
         if len(self.memory) < self.batch_size:
             return None
         
-        # 从经验回放缓冲区采样
+        # 步骤2: 从经验回放缓冲区随机采样一批经验
+        # 返回: states[batch, 4], actions[batch], rewards[batch], 
+        #       next_states[batch, 4], dones[batch]
         states, actions, rewards, next_states, dones = self.memory.sample(self.batch_size)
         
-        # 计算当前Q值
+        # 步骤3: 使用主网络计算当前状态-动作对的Q值
+        # q_network(states) -> [batch, 2] (每个状态对应2个动作的Q值)
+        # gather(1, actions) -> [batch, 1] (只提取实际执行动作的Q值)
         current_q_values = self.q_network(states).gather(1, actions.unsqueeze(1))
         
-        # 计算目标Q值
+        # 步骤4: 使用目标网络计算目标Q值（Bellman方程）
+        # 使用torch.no_grad()禁用梯度计算，因为目标网络不需要更新
         with torch.no_grad():
+            # 计算下一状态的最大Q值: max_a' Q_target(s', a')
+            # max(1)[0] 在动作维度上取最大值，返回 [batch]
             next_q_values = self.target_network(next_states).max(1)[0]
+            
+            # Bellman方程: Q_target = r + γ * max Q(s',a') * (1 - done)
+            # ~dones: 如果回合结束，未来奖励为0
             target_q_values = rewards + (self.gamma * next_q_values * ~dones)
         
-        # 计算损失
+        # 步骤5: 计算损失（当前Q值与目标Q值的均方误差）
+        # squeeze()将[batch, 1]压缩为[batch]，与target_q_values形状匹配
         loss = F.mse_loss(current_q_values.squeeze(), target_q_values)
         
-        # 优化
-        self.optimizer.zero_grad()
-        loss.backward()
-        # 梯度裁剪，防止梯度爆炸
+        # 步骤6: 反向传播和参数更新
+        self.optimizer.zero_grad()  # 清零梯度（防止梯度累积）
+        loss.backward()              # 反向传播计算梯度
+        # 梯度裁剪：限制梯度范数最大为1.0，防止梯度爆炸
         torch.nn.utils.clip_grad_norm_(self.q_network.parameters(), 1.0)
-        self.optimizer.step()
+        self.optimizer.step()        # 使用Adam优化器更新参数
         
-        # 更新目标网络
+        # 步骤7: 定期更新目标网络（每target_update步更新一次）
+        # 目标网络更新较慢，提供稳定的目标值，避免训练不稳定
         self.update_counter += 1
         if self.update_counter % self.target_update == 0:
+            # 将主网络的参数复制到目标网络
             self.target_network.load_state_dict(self.q_network.state_dict())
         
-        # 衰减探索率
+        # 步骤8: 衰减探索率epsilon
+        # 训练初期多探索，后期多利用学到的策略
         if self.epsilon > self.epsilon_min:
             self.epsilon *= self.epsilon_decay
         
+        # 返回损失值（用于监控训练过程）
         return loss.item()
     
     def save(self, filepath):
