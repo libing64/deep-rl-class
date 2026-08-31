@@ -1,0 +1,65 @@
+{
+    "SnowballTarget": {
+        "checkpoints": [
+            {
+                "steps": 49936,
+                "file_path": "/home/libing/source/ml/rl/deep-rl-class/notebooks/results/unit5/results/SnowballTarget1/SnowballTarget/SnowballTarget-49936.onnx",
+                "reward": 18.181818181818183,
+                "creation_time": 1788143496.9625938,
+                "auxillary_file_paths": [
+                    "/home/libing/source/ml/rl/deep-rl-class/notebooks/results/unit5/results/SnowballTarget1/SnowballTarget/SnowballTarget-49936.pt"
+                ]
+            },
+            {
+                "steps": 99960,
+                "file_path": "/home/libing/source/ml/rl/deep-rl-class/notebooks/results/unit5/results/SnowballTarget1/SnowballTarget/SnowballTarget-99960.onnx",
+                "reward": 23.363636363636363,
+                "creation_time": 1788143533.6093345,
+                "auxillary_file_paths": [
+                    "/home/libing/source/ml/rl/deep-rl-class/notebooks/results/unit5/results/SnowballTarget1/SnowballTarget/SnowballTarget-99960.pt"
+                ]
+            },
+            {
+                "steps": 149984,
+                "file_path": "/home/libing/source/ml/rl/deep-rl-class/notebooks/results/unit5/results/SnowballTarget1/SnowballTarget/SnowballTarget-149984.onnx",
+                "reward": 24.363636363636363,
+                "creation_time": 1788143570.7339594,
+                "auxillary_file_paths": [
+                    "/home/libing/source/ml/rl/deep-rl-class/notebooks/results/unit5/results/SnowballTarget1/SnowballTarget/SnowballTarget-149984.pt"
+                ]
+            },
+            {
+                "steps": 199984,
+                "file_path": "/home/libing/source/ml/rl/deep-rl-class/notebooks/results/unit5/results/SnowballTarget1/SnowballTarget/SnowballTarget-199984.onnx",
+                "reward": 26.636363636363637,
+                "creation_time": 1788143607.1293957,
+                "auxillary_file_paths": [
+                    "/home/libing/source/ml/rl/deep-rl-class/notebooks/results/unit5/results/SnowballTarget1/SnowballTarget/SnowballTarget-199984.pt"
+                ]
+            },
+            {
+                "steps": 200112,
+                "file_path": "/home/libing/source/ml/rl/deep-rl-class/notebooks/results/unit5/results/SnowballTarget1/SnowballTarget/SnowballTarget-200112.onnx",
+                "reward": 26.636363636363637,
+                "creation_time": 1788143607.8216937,
+                "auxillary_file_paths": [
+                    "/home/libing/source/ml/rl/deep-rl-class/notebooks/results/unit5/results/SnowballTarget1/SnowballTarget/SnowballTarget-200112.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 200112,
+            "file_path": "/home/libing/source/ml/rl/deep-rl-class/notebooks/results/unit5/results/SnowballTarget1/SnowballTarget.onnx",
+            "reward": 26.636363636363637,
+            "creation_time": 1788143607.8216937,
+            "auxillary_file_paths": [
+                "/home/libing/source/ml/rl/deep-rl-class/notebooks/results/unit5/results/SnowballTarget1/SnowballTarget/SnowballTarget-200112.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.1.0",
+        "torch_version": "2.9.1+cu128"
+    }
+}

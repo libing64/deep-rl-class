@@ -1,0 +1,10 @@
+update=10/97 step=5120 SPS=3787
+update=20/97 step=10240 SPS=4320
+update=30/97 step=15360 SPS=4534
+update=40/97 step=20480 SPS=4648
+update=50/97 step=25600 SPS=4715
+update=60/97 step=30720 SPS=4763
+update=70/97 step=35840 SPS=4803
+update=80/97 step=40960 SPS=4833
+update=90/97 step=46080 SPS=4856
+Unit8.1 PASS mean=-231.07

@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "started": "2026-08-31T08:54:52+08:00",
+  "ended": "2026-08-31T08:54:55+08:00",
+  "duration_sec": 3.7433981895446777,
+  "metrics": {
+    "frozenlake_mean": 1.0,
+    "frozenlake_std": 0.0,
+    "taxi_mean": 7.48,
+    "taxi_std": 2.744011661782799
+  },
+  "metrics_summary": "frozenlake_mean=1.0, frozenlake_std=0.0, taxi_mean=7.48, taxi_std=2.744011661782799",
+  "artifacts": "/home/libing/source/ml/rl/deep-rl-class/notebooks/results/unit2",
+  "notes": ""
+}

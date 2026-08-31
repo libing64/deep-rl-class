@@ -1,0 +1,18 @@
+Loading latest experiment, id=1
+Loading /home/libing/source/ml/rl/deep-rl-class/notebooks/results/unit3/dqn/SpaceInvadersNoFrameskip-v4_1/SpaceInvadersNoFrameskip-v4.zip
+Stacking 4 frames
+Atari Episode Score: 390.00
+Atari Episode Length 3093
+Atari Episode Score: 610.00
+Atari Episode Length 4403
+Atari Episode Score: 800.00
+Atari Episode Length 3665
+Atari Episode Score: 825.00
+Atari Episode Length 5915
+
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+A.L.E: Arcade Learning Environment (version 0.11.2+ecc1138)
+[Powered by Stella]

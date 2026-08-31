@@ -1,0 +1,81 @@
+Episode 100	Average Score: 35.70
+Episode 200	Average Score: 212.96
+Episode 300	Average Score: 450.40
+Episode 400	Average Score: 395.44
+Episode 500	Average Score: 315.02
+Episode 600	Average Score: 199.00
+Episode 700	Average Score: 299.67
+Episode 800	Average Score: 496.68
+Episode 900	Average Score: 456.13
+Episode 1000	Average Score: 155.15
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/home/libing/.conda/envs/deep-rl-class/lib/python3.10/site-packages/gym/utils/passive_env_checker.py:174: UserWarning: [33mWARN: Future gym versions will require that `Env.reset` can be passed a `seed` instead of using `Env.seed` for resetting the environment random number generator.[0m
+  logger.warn(
+/home/libing/.conda/envs/deep-rl-class/lib/python3.10/site-packages/gym/utils/passive_env_checker.py:187: UserWarning: [33mWARN: Future gym versions will require that `Env.reset` can be passed `options` to allow the environment initialisation to be passed additional information.[0m
+  logger.warn(
+/home/libing/.conda/envs/deep-rl-class/lib/python3.10/site-packages/gym/utils/passive_env_checker.py:195: UserWarning: [33mWARN: The result returned by `env.reset()` was not a tuple of the form `(obs, info)`, where `obs` is a observation and `info` is a dictionary containing additional information. Actual type: `<class 'numpy.ndarray'>`[0m
+  logger.warn(
+/home/libing/.conda/envs/deep-rl-class/lib/python3.10/site-packages/gym/utils/passive_env_checker.py:219: DeprecationWarning: [33mWARN: Core environment is written in old step API which returns one bool instead of two. It is recommended to rewrite the environment with new step API. [0m
+  logger.deprecation(
+/home/libing/.conda/envs/deep-rl-class/lib/python3.10/site-packages/gym/utils/passive_env_checker.py:225: DeprecationWarning: `np.bool8` is a deprecated alias for `np.bool_`.  (Deprecated NumPy 1.24)
+  if not isinstance(done, (bool, np.bool8)):
+/home/libing/.conda/envs/deep-rl-class/lib/python3.10/site-packages/gym/utils/passive_env_checker.py:141: UserWarning: [33mWARN: The obs returned by the `step()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/libing/.conda/envs/deep-rl-class/lib/python3.10/site-packages/gym/utils/passive_env_checker.py:165: UserWarning: [33mWARN: The obs returned by the `step()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+couldn't import doomish
+Couldn't import doom
+Episode 1000	Average Score: 1.36
+Episode 2000	Average Score: 5.00
+Episode 3000	Average Score: 6.27
+Episode 4000	Average Score: 9.45
+Episode 5000	Average Score: 12.27
+Episode 6000	Average Score: 16.73
+Episode 7000	Average Score: 12.10
+Episode 8000	Average Score: 18.80
+Episode 9000	Average Score: 13.93
+Episode 10000	Average Score: 18.65
+Episode 11000	Average Score: 18.77
+Episode 12000	Average Score: 18.98
+Episode 13000	Average Score: 26.03
+Episode 14000	Average Score: 21.15
+Episode 15000	Average Score: 24.07
+Episode 16000	Average Score: 18.17
+Episode 17000	Average Score: 23.87
+Episode 18000	Average Score: 36.52
+Episode 19000	Average Score: 34.78
+Episode 20000	Average Score: 28.58
+Episode 21000	Average Score: 36.97
+Episode 22000	Average Score: 35.80
+Episode 23000	Average Score: 41.56
+Episode 24000	Average Score: 37.02
+Episode 25000	Average Score: 40.90
+Episode 26000	Average Score: 49.51
+Episode 27000	Average Score: 47.02
+Episode 28000	Average Score: 57.46
+Episode 29000	Average Score: 36.36
+Episode 30000	Average Score: 46.03
+Episode 31000	Average Score: 34.73
+Episode 32000	Average Score: 62.35
+Episode 33000	Average Score: 52.81
+Episode 34000	Average Score: 66.44
+Episode 35000	Average Score: 62.96
+Episode 36000	Average Score: 53.43
+Episode 37000	Average Score: 74.69
+Episode 38000	Average Score: 70.45
+Episode 39000	Average Score: 64.28
+Episode 40000	Average Score: 85.78
+Episode 41000	Average Score: 73.03
+Episode 42000	Average Score: 56.37
+Episode 43000	Average Score: 77.50
+Episode 44000	Average Score: 90.62
+Episode 45000	Average Score: 68.09
+Episode 46000	Average Score: 72.48
+Episode 47000	Average Score: 89.72
+Episode 48000	Average Score: 85.66
+Episode 49000	Average Score: 91.74
+Episode 50000	Average Score: 83.99
+Unit4 PASS CP=156.90 PC=120.50

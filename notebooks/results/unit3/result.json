@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "started": "2026-08-31T09:05:38+08:00",
+  "ended": "2026-08-31T09:29:10+08:00",
+  "duration_sec": 1412.552087545395,
+  "metrics": {
+    "enjoy_mean_reward": 656.25,
+    "n_timesteps": 1000000,
+    "eval_mean_reward_last": 616.0,
+    "enjoy_scores": [
+      390.0,
+      610.0,
+      800.0,
+      825.0
+    ]
+  },
+  "metrics_summary": "enjoy_mean_reward=656.25, n_timesteps=1000000, eval_mean_reward_last=616.0",
+  "artifacts": "/home/libing/source/ml/rl/deep-rl-class/notebooks/results/unit3",
+  "notes": "rl_zoo3 DQN 1e6; see enjoy_stdout.txt"
+}

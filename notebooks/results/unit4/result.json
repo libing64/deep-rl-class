@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "started": "2026-08-31T09:05:38+08:00",
+  "ended": "2026-08-31T10:34:10+08:00",
+  "duration_sec": 5311.295429944992,
+  "metrics": {
+    "cartpole_mean": 156.9,
+    "cartpole_std": 8.93812060782355,
+    "cartpole_last100": 155.15,
+    "pixelcopter_mean": 120.5,
+    "pixelcopter_std": 107.63387013389419,
+    "pixelcopter_last100": 83.99
+  },
+  "metrics_summary": "cartpole_mean=156.9, cartpole_std=8.93812060782355, cartpole_last100=155.15, pixelcopter_mean=120.5, pixelcopter_std=107.63387013389419, pixelcopter_last100=83.99",
+  "artifacts": "/home/libing/source/ml/rl/deep-rl-class/notebooks/results/unit4",
+  "notes": ""
+}

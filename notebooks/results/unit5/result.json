@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "started": "2026-08-31T10:30:57+08:00",
+  "ended": "2026-08-31T10:33:28+08:00",
+  "duration_sec": 151.18228483200073,
+  "metrics": {
+    "run_id": "SnowballTarget1",
+    "max_steps": 200000,
+    "exe": "/home/libing/source/ml/rl/deep-rl-class/notebooks/results/unit5/training-envs-executables/linux/SnowballTarget/SnowballTarget.x86_64",
+    "final_step": 200000,
+    "final_mean_reward": 25.864
+  },
+  "metrics_summary": "final_mean_reward=25.864, steps=200000",
+  "artifacts": "/home/libing/source/ml/rl/deep-rl-class/notebooks/results/unit5",
+  "notes": "results=/home/libing/source/ml/rl/deep-rl-class/notebooks/results/unit5/results"
+}

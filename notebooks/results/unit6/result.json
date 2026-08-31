@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "started": "2026-08-31T10:47:43+08:00",
+  "ended": "2026-08-31T11:16:16+08:00",
+  "duration_sec": 1713.0339262485504,
+  "metrics": {
+    "PandaReachDense_mean": -0.15928514348343015,
+    "PandaReachDense_std": 0.058832826602861286,
+    "PandaPickAndPlace_mean": -50.0,
+    "PandaPickAndPlace_std": 0.0
+  },
+  "metrics_summary": "PandaReachDense_mean=-0.15928514348343015, PandaReachDense_std=0.058832826602861286, PandaPickAndPlace_mean=-50.0, PandaPickAndPlace_std=0.0",
+  "artifacts": "/home/libing/source/ml/rl/deep-rl-class/notebooks/results/unit6",
+  "notes": "target Reach >= -3.5"
+}

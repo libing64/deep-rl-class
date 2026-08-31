@@ -1,0 +1,237 @@
+Running: /home/libing/.conda/envs/deep-rl-class/bin/mlagents-learn /home/libing/source/ml/rl/deep-rl-class/notebooks/results/unit5/config/ppo/SnowballTarget.yaml --env=/home/libing/source/ml/rl/deep-rl-class/notebooks/results/unit5/training-envs-executables/linux/SnowballTarget/SnowballTarget.x86_64 --run-id=SnowballTarget1 --no-graphics --results-dir=/home/libing/source/ml/rl/deep-rl-class/notebooks/results/unit5/results --force
+/home/libing/.conda/envs/deep-rl-class/lib/python3.10/site-packages/mlagents/torch_utils/torch.py:4: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+
+            ┐  ╖
+        ╓╖╬│╡  ││╬╖╖
+    ╓╖╬│││││┘  ╬│││││╬╖
+ ╖╬│││││╬╜        ╙╬│││││╖╖                               ╗╗╗
+ ╬╬╬╬╖││╦╖        ╖╬││╗╣╣╣╬      ╟╣╣╬    ╟╣╣╣             ╜╜╜  ╟╣╣
+ ╬╬╬╬╬╬╬╬╖│╬╖╖╓╬╪│╓╣╣╣╣╣╣╣╬      ╟╣╣╬    ╟╣╣╣ ╒╣╣╖╗╣╣╣╗   ╣╣╣ ╣╣╣╣╣╣ ╟╣╣╖   ╣╣╣
+ ╬╬╬╬┐  ╙╬╬╬╬│╓╣╣╣╝╜  ╫╣╣╣╬      ╟╣╣╬    ╟╣╣╣ ╟╣╣╣╙ ╙╣╣╣  ╣╣╣ ╙╟╣╣╜╙  ╫╣╣  ╟╣╣
+ ╬╬╬╬┐     ╙╬╬╣╣      ╫╣╣╣╬      ╟╣╣╬    ╟╣╣╣ ╟╣╣╬   ╣╣╣  ╣╣╣  ╟╣╣     ╣╣╣┌╣╣╜
+ ╬╬╬╜       ╬╬╣╣      ╙╝╣╣╬      ╙╣╣╣╗╖╓╗╣╣╣╜ ╟╣╣╬   ╣╣╣  ╣╣╣  ╟╣╣╦╓    ╣╣╣╣╣
+ ╙   ╓╦╖    ╬╬╣╣   ╓╗╗╖            ╙╝╣╣╣╣╝╜   ╘╝╝╜   ╝╝╝  ╝╝╝   ╙╣╣╣    ╟╣╣╣
+   ╩╬╬╬╬╬╬╦╦╬╬╣╣╗╣╣╣╣╣╣╣╝                                             ╫╣╣╣╣
+      ╙╬╬╬╬╬╬╬╣╣╣╣╣╣╝╜
+          ╙╬╬╬╣╣╣╜
+             ╙
+        
+ Version information:
+  ml-agents: 1.1.0,
+  ml-agents-envs: 1.1.0,
+  Communicator API: 1.5.0,
+  PyTorch: 2.9.1+cu128
+[INFO] Connected to Unity environment with package version 2.1.0-exp.1 and communication version 1.5.0
+[INFO] Connected new brain: SnowballTarget?team=0
+[INFO] Hyperparameters for behavior name SnowballTarget: 
+	trainer_type:	ppo
+	hyperparameters:	
+	  batch_size:	128
+	  buffer_size:	2048
+	  learning_rate:	0.0003
+	  beta:	0.005
+	  epsilon:	0.2
+	  lambd:	0.95
+	  num_epoch:	3
+	  shared_critic:	False
+	  learning_rate_schedule:	linear
+	  beta_schedule:	linear
+	  epsilon_schedule:	linear
+	checkpoint_interval:	50000
+	network_settings:	
+	  normalize:	False
+	  hidden_units:	256
+	  num_layers:	2
+	  vis_encode_type:	simple
+	  memory:	None
+	  goal_conditioning_type:	hyper
+	  deterministic:	False
+	reward_signals:	
+	  extrinsic:	
+	    gamma:	0.99
+	    strength:	1.0
+	    network_settings:	
+	      normalize:	False
+	      hidden_units:	128
+	      num_layers:	2
+	      vis_encode_type:	simple
+	      memory:	None
+	      goal_conditioning_type:	hyper
+	      deterministic:	False
+	init_path:	None
+	keep_checkpoints:	10
+	even_checkpoints:	False
+	max_steps:	200000
+	time_horizon:	64
+	summary_freq:	10000
+	threaded:	False
+	self_play:	None
+	behavioral_cloning:	None
+[INFO] SnowballTarget. Step: 10000. Time Elapsed: 8.637 s. Mean Reward: 3.250. Std of Reward: 1.896. Training.
+[INFO] SnowballTarget. Step: 20000. Time Elapsed: 16.273 s. Mean Reward: 6.636. Std of Reward: 2.981. Training.
+[INFO] SnowballTarget. Step: 30000. Time Elapsed: 23.125 s. Mean Reward: 10.364. Std of Reward: 3.046. Training.
+[INFO] SnowballTarget. Step: 40000. Time Elapsed: 30.576 s. Mean Reward: 13.000. Std of Reward: 2.763. Training.
+[INFO] SnowballTarget. Step: 50000. Time Elapsed: 37.693 s. Mean Reward: 16.000. Std of Reward: 3.038. Training.
+/home/libing/.conda/envs/deep-rl-class/lib/python3.10/site-packages/mlagents/trainers/torch_entities/model_serialization.py:164: UserWarning: # 'dynamic_axes' is not recommended when dynamo=True, and may lead to 'torch._dynamo.exc.UserError: Constraints violated.' Supply the 'dynamic_shapes' argument instead if export is unsuccessful.
+  torch.onnx.export(
+W0831 10:31:35.893000 1151402 site-packages/torch/onnx/_internal/exporter/_compat.py:114] Setting ONNX exporter to use operator set version 18 because the requested opset_version 9 is a lower version than we have implementations for. Automatic version conversion will be performed, which may not be successful at converting to the requested version. If version conversion is unsuccessful, the opset version of the exported model will be kept at 18. Please consider setting opset_version >=18 to leverage latest ONNX features
+W0831 10:31:36.260000 1151402 site-packages/torch/onnx/_internal/exporter/_registration.py:107] torchvision is not installed. Skipping torchvision::nms
+W0831 10:31:36.261000 1151402 site-packages/torch/onnx/_internal/exporter/_registration.py:107] torchvision is not installed. Skipping torchvision::roi_align
+W0831 10:31:36.261000 1151402 site-packages/torch/onnx/_internal/exporter/_registration.py:107] torchvision is not installed. Skipping torchvision::roi_pool
+W0831 10:31:36.261000 1151402 site-packages/torch/onnx/_internal/exporter/_registration.py:107] torchvision is not installed. Skipping torchvision::deform_conv2d
+The model version conversion is not supported by the onnxscript version converter and fallback is enabled. The model will be converted using the onnx C API (target version: 9).
+Failed to convert the model to the target version 9 using the ONNX C API. The model was not modified
+Traceback (most recent call last):
+  File "/home/libing/.conda/envs/deep-rl-class/lib/python3.10/site-packages/onnxscript/version_converter/__init__.py", line 137, in call
+    converted_proto = _c_api_utils.call_onnx_api(
+  File "/home/libing/.conda/envs/deep-rl-class/lib/python3.10/site-packages/onnxscript/version_converter/_c_api_utils.py", line 65, in call_onnx_api
+    result = func(proto)
+  File "/home/libing/.conda/envs/deep-rl-class/lib/python3.10/site-packages/onnxscript/version_converter/__init__.py", line 132, in _partial_convert_version
+    return onnx.version_converter.convert_version(
+  File "/home/libing/.conda/envs/deep-rl-class/lib/python3.10/site-packages/onnx/version_converter.py", line 39, in convert_version
+    converted_model_str = C.convert_version(model_str, target_version)
+RuntimeError: /github/workspace/onnx/version_converter/BaseConverter.h:68: adapter_lookup: Assertion `false` failed: No Adapter From Version $14 for Mul
+Skipped deduplication of initializer 'version_number' as it is a graph input or output
+Skipped deduplication of initializer 'memory_size' as it is a graph input or output
+Skipped deduplication of initializer 'discrete_action_output_shape' as it is a graph input or output
+[torch.onnx] Obtain model graph for `SimpleActor([...]` with `torch.export.export(..., strict=False)`...
+[torch.onnx] Obtain model graph for `SimpleActor([...]` with `torch.export.export(..., strict=False)`... ✅
+[torch.onnx] Run decomposition...
+[torch.onnx] Run decomposition... ✅
+[torch.onnx] Translate the graph into ONNX...
+[torch.onnx] Translate the graph into ONNX... ✅
+[INFO] Exported /home/libing/source/ml/rl/deep-rl-class/notebooks/results/unit5/results/SnowballTarget1/SnowballTarget/SnowballTarget-49936.onnx
+[INFO] SnowballTarget. Step: 60000. Time Elapsed: 46.016 s. Mean Reward: 16.691. Std of Reward: 2.522. Training.
+[INFO] SnowballTarget. Step: 70000. Time Elapsed: 53.107 s. Mean Reward: 19.159. Std of Reward: 2.345. Training.
+[INFO] SnowballTarget. Step: 80000. Time Elapsed: 60.602 s. Mean Reward: 20.655. Std of Reward: 2.298. Training.
+[INFO] SnowballTarget. Step: 90000. Time Elapsed: 67.345 s. Mean Reward: 20.682. Std of Reward: 2.753. Training.
+[INFO] SnowballTarget. Step: 100000. Time Elapsed: 74.829 s. Mean Reward: 22.473. Std of Reward: 2.434. Training.
+/home/libing/.conda/envs/deep-rl-class/lib/python3.10/site-packages/mlagents/trainers/torch_entities/model_serialization.py:164: UserWarning: # 'dynamic_axes' is not recommended when dynamo=True, and may lead to 'torch._dynamo.exc.UserError: Constraints violated.' Supply the 'dynamic_shapes' argument instead if export is unsuccessful.
+  torch.onnx.export(
+W0831 10:32:12.943000 1151402 site-packages/torch/onnx/_internal/exporter/_compat.py:114] Setting ONNX exporter to use operator set version 18 because the requested opset_version 9 is a lower version than we have implementations for. Automatic version conversion will be performed, which may not be successful at converting to the requested version. If version conversion is unsuccessful, the opset version of the exported model will be kept at 18. Please consider setting opset_version >=18 to leverage latest ONNX features
+W0831 10:32:13.214000 1151402 site-packages/torch/onnx/_internal/exporter/_registration.py:107] torchvision is not installed. Skipping torchvision::nms
+W0831 10:32:13.214000 1151402 site-packages/torch/onnx/_internal/exporter/_registration.py:107] torchvision is not installed. Skipping torchvision::roi_align
+W0831 10:32:13.214000 1151402 site-packages/torch/onnx/_internal/exporter/_registration.py:107] torchvision is not installed. Skipping torchvision::roi_pool
+W0831 10:32:13.214000 1151402 site-packages/torch/onnx/_internal/exporter/_registration.py:107] torchvision is not installed. Skipping torchvision::deform_conv2d
+The model version conversion is not supported by the onnxscript version converter and fallback is enabled. The model will be converted using the onnx C API (target version: 9).
+Failed to convert the model to the target version 9 using the ONNX C API. The model was not modified
+Traceback (most recent call last):
+  File "/home/libing/.conda/envs/deep-rl-class/lib/python3.10/site-packages/onnxscript/version_converter/__init__.py", line 137, in call
+    converted_proto = _c_api_utils.call_onnx_api(
+  File "/home/libing/.conda/envs/deep-rl-class/lib/python3.10/site-packages/onnxscript/version_converter/_c_api_utils.py", line 65, in call_onnx_api
+    result = func(proto)
+  File "/home/libing/.conda/envs/deep-rl-class/lib/python3.10/site-packages/onnxscript/version_converter/__init__.py", line 132, in _partial_convert_version
+    return onnx.version_converter.convert_version(
+  File "/home/libing/.conda/envs/deep-rl-class/lib/python3.10/site-packages/onnx/version_converter.py", line 39, in convert_version
+    converted_model_str = C.convert_version(model_str, target_version)
+RuntimeError: /github/workspace/onnx/version_converter/BaseConverter.h:68: adapter_lookup: Assertion `false` failed: No Adapter From Version $14 for Mul
+Skipped deduplication of initializer 'version_number' as it is a graph input or output
+Skipped deduplication of initializer 'memory_size' as it is a graph input or output
+Skipped deduplication of initializer 'discrete_action_output_shape' as it is a graph input or output
+[torch.onnx] Obtain model graph for `SimpleActor([...]` with `torch.export.export(..., strict=False)`...
+[torch.onnx] Obtain model graph for `SimpleActor([...]` with `torch.export.export(..., strict=False)`... ✅
+[torch.onnx] Run decomposition...
+[torch.onnx] Run decomposition... ✅
+[torch.onnx] Translate the graph into ONNX...
+[torch.onnx] Translate the graph into ONNX... ✅
+[INFO] Exported /home/libing/source/ml/rl/deep-rl-class/notebooks/results/unit5/results/SnowballTarget1/SnowballTarget/SnowballTarget-99960.onnx
+[INFO] SnowballTarget. Step: 110000. Time Elapsed: 82.709 s. Mean Reward: 23.426. Std of Reward: 2.469. Training.
+[INFO] SnowballTarget. Step: 120000. Time Elapsed: 89.720 s. Mean Reward: 24.667. Std of Reward: 2.556. Training.
+[INFO] SnowballTarget. Step: 130000. Time Elapsed: 97.353 s. Mean Reward: 24.527. Std of Reward: 2.096. Training.
+[INFO] SnowballTarget. Step: 140000. Time Elapsed: 104.104 s. Mean Reward: 25.364. Std of Reward: 2.227. Training.
+[INFO] SnowballTarget. Step: 150000. Time Elapsed: 111.926 s. Mean Reward: 25.400. Std of Reward: 2.269. Training.
+/home/libing/.conda/envs/deep-rl-class/lib/python3.10/site-packages/mlagents/trainers/torch_entities/model_serialization.py:164: UserWarning: # 'dynamic_axes' is not recommended when dynamo=True, and may lead to 'torch._dynamo.exc.UserError: Constraints violated.' Supply the 'dynamic_shapes' argument instead if export is unsuccessful.
+  torch.onnx.export(
+W0831 10:32:50.040000 1151402 site-packages/torch/onnx/_internal/exporter/_compat.py:114] Setting ONNX exporter to use operator set version 18 because the requested opset_version 9 is a lower version than we have implementations for. Automatic version conversion will be performed, which may not be successful at converting to the requested version. If version conversion is unsuccessful, the opset version of the exported model will be kept at 18. Please consider setting opset_version >=18 to leverage latest ONNX features
+W0831 10:32:50.248000 1151402 site-packages/torch/onnx/_internal/exporter/_registration.py:107] torchvision is not installed. Skipping torchvision::nms
+W0831 10:32:50.248000 1151402 site-packages/torch/onnx/_internal/exporter/_registration.py:107] torchvision is not installed. Skipping torchvision::roi_align
+W0831 10:32:50.248000 1151402 site-packages/torch/onnx/_internal/exporter/_registration.py:107] torchvision is not installed. Skipping torchvision::roi_pool
+W0831 10:32:50.248000 1151402 site-packages/torch/onnx/_internal/exporter/_registration.py:107] torchvision is not installed. Skipping torchvision::deform_conv2d
+The model version conversion is not supported by the onnxscript version converter and fallback is enabled. The model will be converted using the onnx C API (target version: 9).
+Failed to convert the model to the target version 9 using the ONNX C API. The model was not modified
+Traceback (most recent call last):
+  File "/home/libing/.conda/envs/deep-rl-class/lib/python3.10/site-packages/onnxscript/version_converter/__init__.py", line 137, in call
+    converted_proto = _c_api_utils.call_onnx_api(
+  File "/home/libing/.conda/envs/deep-rl-class/lib/python3.10/site-packages/onnxscript/version_converter/_c_api_utils.py", line 65, in call_onnx_api
+    result = func(proto)
+  File "/home/libing/.conda/envs/deep-rl-class/lib/python3.10/site-packages/onnxscript/version_converter/__init__.py", line 132, in _partial_convert_version
+    return onnx.version_converter.convert_version(
+  File "/home/libing/.conda/envs/deep-rl-class/lib/python3.10/site-packages/onnx/version_converter.py", line 39, in convert_version
+    converted_model_str = C.convert_version(model_str, target_version)
+RuntimeError: /github/workspace/onnx/version_converter/BaseConverter.h:68: adapter_lookup: Assertion `false` failed: No Adapter From Version $14 for Mul
+Skipped deduplication of initializer 'version_number' as it is a graph input or output
+Skipped deduplication of initializer 'memory_size' as it is a graph input or output
+Skipped deduplication of initializer 'discrete_action_output_shape' as it is a graph input or output
+[torch.onnx] Obtain model graph for `SimpleActor([...]` with `torch.export.export(..., strict=False)`...
+[torch.onnx] Obtain model graph for `SimpleActor([...]` with `torch.export.export(..., strict=False)`... ✅
+[torch.onnx] Run decomposition...
+[torch.onnx] Run decomposition... ✅
+[torch.onnx] Translate the graph into ONNX...
+[torch.onnx] Translate the graph into ONNX... ✅
+[INFO] Exported /home/libing/source/ml/rl/deep-rl-class/notebooks/results/unit5/results/SnowballTarget1/SnowballTarget/SnowballTarget-149984.onnx
+[INFO] SnowballTarget. Step: 160000. Time Elapsed: 119.712 s. Mean Reward: 25.205. Std of Reward: 2.380. Training.
+[INFO] SnowballTarget. Step: 170000. Time Elapsed: 126.899 s. Mean Reward: 25.764. Std of Reward: 2.174. Training.
+[INFO] SnowballTarget. Step: 180000. Time Elapsed: 133.912 s. Mean Reward: 25.364. Std of Reward: 2.346. Training.
+[INFO] SnowballTarget. Step: 190000. Time Elapsed: 141.400 s. Mean Reward: 26.000. Std of Reward: 2.080. Training.
+[INFO] SnowballTarget. Step: 200000. Time Elapsed: 148.340 s. Mean Reward: 25.864. Std of Reward: 2.180. Training.
+/home/libing/.conda/envs/deep-rl-class/lib/python3.10/site-packages/mlagents/trainers/torch_entities/model_serialization.py:164: UserWarning: # 'dynamic_axes' is not recommended when dynamo=True, and may lead to 'torch._dynamo.exc.UserError: Constraints violated.' Supply the 'dynamic_shapes' argument instead if export is unsuccessful.
+  torch.onnx.export(
+W0831 10:33:26.456000 1151402 site-packages/torch/onnx/_internal/exporter/_compat.py:114] Setting ONNX exporter to use operator set version 18 because the requested opset_version 9 is a lower version than we have implementations for. Automatic version conversion will be performed, which may not be successful at converting to the requested version. If version conversion is unsuccessful, the opset version of the exported model will be kept at 18. Please consider setting opset_version >=18 to leverage latest ONNX features
+W0831 10:33:26.736000 1151402 site-packages/torch/onnx/_internal/exporter/_registration.py:107] torchvision is not installed. Skipping torchvision::nms
+W0831 10:33:26.736000 1151402 site-packages/torch/onnx/_internal/exporter/_registration.py:107] torchvision is not installed. Skipping torchvision::roi_align
+W0831 10:33:26.736000 1151402 site-packages/torch/onnx/_internal/exporter/_registration.py:107] torchvision is not installed. Skipping torchvision::roi_pool
+W0831 10:33:26.737000 1151402 site-packages/torch/onnx/_internal/exporter/_registration.py:107] torchvision is not installed. Skipping torchvision::deform_conv2d
+The model version conversion is not supported by the onnxscript version converter and fallback is enabled. The model will be converted using the onnx C API (target version: 9).
+Failed to convert the model to the target version 9 using the ONNX C API. The model was not modified
+Traceback (most recent call last):
+  File "/home/libing/.conda/envs/deep-rl-class/lib/python3.10/site-packages/onnxscript/version_converter/__init__.py", line 137, in call
+    converted_proto = _c_api_utils.call_onnx_api(
+  File "/home/libing/.conda/envs/deep-rl-class/lib/python3.10/site-packages/onnxscript/version_converter/_c_api_utils.py", line 65, in call_onnx_api
+    result = func(proto)
+  File "/home/libing/.conda/envs/deep-rl-class/lib/python3.10/site-packages/onnxscript/version_converter/__init__.py", line 132, in _partial_convert_version
+    return onnx.version_converter.convert_version(
+  File "/home/libing/.conda/envs/deep-rl-class/lib/python3.10/site-packages/onnx/version_converter.py", line 39, in convert_version
+    converted_model_str = C.convert_version(model_str, target_version)
+RuntimeError: /github/workspace/onnx/version_converter/BaseConverter.h:68: adapter_lookup: Assertion `false` failed: No Adapter From Version $14 for Mul
+Skipped deduplication of initializer 'version_number' as it is a graph input or output
+Skipped deduplication of initializer 'memory_size' as it is a graph input or output
+Skipped deduplication of initializer 'discrete_action_output_shape' as it is a graph input or output
+[torch.onnx] Obtain model graph for `SimpleActor([...]` with `torch.export.export(..., strict=False)`...
+[torch.onnx] Obtain model graph for `SimpleActor([...]` with `torch.export.export(..., strict=False)`... ✅
+[torch.onnx] Run decomposition...
+[torch.onnx] Run decomposition... ✅
+[torch.onnx] Translate the graph into ONNX...
+[torch.onnx] Translate the graph into ONNX... ✅
+[INFO] Exported /home/libing/source/ml/rl/deep-rl-class/notebooks/results/unit5/results/SnowballTarget1/SnowballTarget/SnowballTarget-199984.onnx
+/home/libing/.conda/envs/deep-rl-class/lib/python3.10/site-packages/mlagents/trainers/torch_entities/model_serialization.py:164: UserWarning: # 'dynamic_axes' is not recommended when dynamo=True, and may lead to 'torch._dynamo.exc.UserError: Constraints violated.' Supply the 'dynamic_shapes' argument instead if export is unsuccessful.
+  torch.onnx.export(
+W0831 10:33:27.145000 1151402 site-packages/torch/onnx/_internal/exporter/_compat.py:114] Setting ONNX exporter to use operator set version 18 because the requested opset_version 9 is a lower version than we have implementations for. Automatic version conversion will be performed, which may not be successful at converting to the requested version. If version conversion is unsuccessful, the opset version of the exported model will be kept at 18. Please consider setting opset_version >=18 to leverage latest ONNX features
+W0831 10:33:27.344000 1151402 site-packages/torch/onnx/_internal/exporter/_registration.py:107] torchvision is not installed. Skipping torchvision::nms
+W0831 10:33:27.344000 1151402 site-packages/torch/onnx/_internal/exporter/_registration.py:107] torchvision is not installed. Skipping torchvision::roi_align
+W0831 10:33:27.344000 1151402 site-packages/torch/onnx/_internal/exporter/_registration.py:107] torchvision is not installed. Skipping torchvision::roi_pool
+W0831 10:33:27.345000 1151402 site-packages/torch/onnx/_internal/exporter/_registration.py:107] torchvision is not installed. Skipping torchvision::deform_conv2d
+The model version conversion is not supported by the onnxscript version converter and fallback is enabled. The model will be converted using the onnx C API (target version: 9).
+Failed to convert the model to the target version 9 using the ONNX C API. The model was not modified
+Traceback (most recent call last):
+  File "/home/libing/.conda/envs/deep-rl-class/lib/python3.10/site-packages/onnxscript/version_converter/__init__.py", line 137, in call
+    converted_proto = _c_api_utils.call_onnx_api(
+  File "/home/libing/.conda/envs/deep-rl-class/lib/python3.10/site-packages/onnxscript/version_converter/_c_api_utils.py", line 65, in call_onnx_api
+    result = func(proto)
+  File "/home/libing/.conda/envs/deep-rl-class/lib/python3.10/site-packages/onnxscript/version_converter/__init__.py", line 132, in _partial_convert_version
+    return onnx.version_converter.convert_version(
+  File "/home/libing/.conda/envs/deep-rl-class/lib/python3.10/site-packages/onnx/version_converter.py", line 39, in convert_version
+    converted_model_str = C.convert_version(model_str, target_version)
+RuntimeError: /github/workspace/onnx/version_converter/BaseConverter.h:68: adapter_lookup: Assertion `false` failed: No Adapter From Version $14 for Mul
+Skipped deduplication of initializer 'version_number' as it is a graph input or output
+Skipped deduplication of initializer 'memory_size' as it is a graph input or output
+Skipped deduplication of initializer 'discrete_action_output_shape' as it is a graph input or output
+[torch.onnx] Obtain model graph for `SimpleActor([...]` with `torch.export.export(..., strict=False)`...
+[torch.onnx] Obtain model graph for `SimpleActor([...]` with `torch.export.export(..., strict=False)`... ✅
+[torch.onnx] Run decomposition...
+[torch.onnx] Run decomposition... ✅
+[torch.onnx] Translate the graph into ONNX...
+[torch.onnx] Translate the graph into ONNX... ✅
+[INFO] Exported /home/libing/source/ml/rl/deep-rl-class/notebooks/results/unit5/results/SnowballTarget1/SnowballTarget/SnowballTarget-200112.onnx
+[INFO] Copied /home/libing/source/ml/rl/deep-rl-class/notebooks/results/unit5/results/SnowballTarget1/SnowballTarget/SnowballTarget-200112.onnx to /home/libing/source/ml/rl/deep-rl-class/notebooks/results/unit5/results/SnowballTarget1/SnowballTarget.onnx.
+Unit5 PASS

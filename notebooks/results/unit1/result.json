@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "started": "2026-08-31T08:54:52+08:00",
+  "ended": "2026-08-31T09:01:53+08:00",
+  "duration_sec": 420.22051978111267,
+  "metrics": {
+    "mean_reward": 240.12335464081497,
+    "std_reward": 25.63439913602216
+  },
+  "metrics_summary": "mean_reward=240.12335464081497, std_reward=25.63439913602216",
+  "artifacts": "/home/libing/source/ml/rl/deep-rl-class/notebooks/results/unit1",
+  "notes": "LunarLander-v3 (gymnasium); 1M timesteps"
+}

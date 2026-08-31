@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "started": "2026-08-31T11:18:47+08:00",
+  "ended": "2026-08-31T11:21:57+08:00",
+  "duration_sec": 190.0,
+  "metrics": {
+    "env_steps": 4000000,
+    "final_avg_episode_reward": 25.258,
+    "best_avg_episode_reward": 25.632,
+    "replay_mp4": "/home/libing/source/ml/rl/deep-rl-class/notebooks/results/unit8_part2/train_dir/doom_health_gathering_supreme/replay.mp4",
+    "replay_exists": true
+  },
+  "metrics_summary": "final_avg=25.258, best=25.632, replay=True",
+  "artifacts": "/home/libing/source/ml/rl/deep-rl-class/notebooks/results/unit8_part2",
+  "notes": "Sample Factory APPO 4M env steps (~46k fps); enjoy+replay after torch.load weights_only patch"
+}

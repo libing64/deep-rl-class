@@ -1,0 +1,1 @@
+/home/libing/.conda/envs/deep-rl-class/bin/python -m rl_zoo3.train --algo dqn --env SpaceInvadersNoFrameskip-v4 -f /home/libing/source/ml/rl/deep-rl-class/notebooks/results/unit3 -c /home/libing/source/ml/rl/deep-rl-class/notebooks/runners/dqn.yml --device cuda

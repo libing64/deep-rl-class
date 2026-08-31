@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/home/libing/source/ml/rl/deep-rl-class/notebooks/runners/run_unit8_part2.py", line 75, in main
+    enjoy_status = enjoy(cfg_eval)
+  File "/home/libing/.conda/envs/deep-rl-class/lib/python3.10/site-packages/sample_factory/enjoy.py", line 125, in enjoy
+    actor_critic.load_state_dict(checkpoint_dict["model"])
+TypeError: 'NoneType' object is not subscriptable

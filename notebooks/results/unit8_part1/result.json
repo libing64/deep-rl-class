@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "started": "2026-08-31T11:16:28+08:00",
+  "ended": "2026-08-31T11:16:39+08:00",
+  "duration_sec": 11.077168464660645,
+  "metrics": {
+    "mean_reward": -231.0672619366657,
+    "std_reward": 107.20504105552129,
+    "total_timesteps": 50000
+  },
+  "metrics_summary": "mean_reward=-231.0672619366657, std_reward=107.20504105552129, total_timesteps=50000",
+  "artifacts": "/home/libing/source/ml/rl/deep-rl-class/notebooks/results/unit8_part1",
+  "notes": "CleanRL PPO gymnasium LunarLander-v3; no Hub"
+}
