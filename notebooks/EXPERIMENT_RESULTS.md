@@ -14,7 +14,7 @@ Policy: no Hugging Face Hub push; local artifacts only.
 | 6 A2C Panda | PASS | 1713.0s | PandaReachDense_mean=-0.15928514348343015, PandaReachDense_std=0.058832826602861 | results/unit6/ |
 | 8.1 CleanRL PPO | PASS | 11.1s | mean_reward=-231.0672619366657, std_reward=107.20504105552129, total_timesteps=5 | results/unit8_part1/ |
 | 8.2 VizDoom SF | PASS | 190.0s | final_avg=25.258, best=25.632, replay=True | /home/libing/source/ml/rl/deep-rl-class/notebooks/results/unit8_part2 |
-| mario 1-1 PPO | PASS | 4230.8s | x_pos=899, reward=812, flag=False | results/mario/ |
+| mario 1-1 | PASS | 220s search | x_pos=3161, reward=2904, flag=True | results/mario/mario-1-1-flag.mp4 |
 
 ---
 
@@ -103,9 +103,9 @@ Policy: no Hugging Face Hub push; local artifacts only.
 ### Unit mario
 
 - **Status**: PASS
-- **Started**: 2026-10-05T06:28:18+08:00
-- **Ended**: 2026-10-05T07:38:48+08:00
-- **Duration (s)**: 4230.779122829437
-- **Metrics**: {'env': 'SuperMarioBros-1-1', 'timesteps': 2000000, 'video_x_pos': 899, 'video_flag': False, 'video_reward': 812.0, 'video': '/home/libing/source/ml/rl/deep-rl-class/notebooks/results/mario/mario-1-1.mp4'}
+- **Started**: 2026-10-05T08:54:29+08:00
+- **Ended**: 2026-10-05T08:58:09+08:00
+- **Duration (s)**: 220
+- **Metrics**: {'env': 'SuperMarioBros-1-1', 'best_x': 3161, 'video_x_pos': 3161, 'video_flag': True, 'video_reward': 2904.0, 'video_frames': 4345, 'video': '/home/libing/source/ml/rl/deep-rl-class/notebooks/results/mario/mario-1-1-flag.mp4'}
 - **Artifacts**: /home/libing/source/ml/rl/deep-rl-class/notebooks/results/mario
-- **Notes**: PPO CnnPolicy, SIMPLE_MOVEMENT, frame-skip 4, 84x84x4
+- **Notes**: Reached the flag from the earlier PPO checkpoint by replaying the farthest action sequence and exploring from that point. The first 2M-step PPO run stopped at x=899.
