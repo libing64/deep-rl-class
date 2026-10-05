@@ -6,7 +6,7 @@ Policy: no Hugging Face Hub push; local artifacts only.
 
 | Unit | Status | Duration | Key metrics | Artifacts |
 |------|--------|----------|-------------|-----------|
-| 1 PPO LunarLander | PASS | 420.2s | mean_reward=240.12335464081497, std_reward=25.63439913602216 | results/unit1/ |
+| 1 PPO LunarLander | PASS | 371.3s | mean_reward=256.5946796237051, std_reward=15.161667885356957 | /home/libing/source/ml/rl/deep-rl-class/notebooks/results/unit1 |
 | 2 Q-Learning | PASS | 3.7s | frozenlake_mean=1.0, frozenlake_std=0.0, taxi_mean=7.48, taxi_std=2.744011661782 | results/unit2/ |
 | 3 DQN SpaceInvaders | PASS | 1412.6s | enjoy_mean_reward=656.25, n_timesteps=1000000, eval_mean_reward_last=616.0 | results/unit3/ |
 | 4 REINFORCE | PASS | 5311.3s | cartpole_mean=156.9, cartpole_std=8.93812060782355, cartpole_last100=155.15, pix | results/unit4/ |
@@ -14,6 +14,7 @@ Policy: no Hugging Face Hub push; local artifacts only.
 | 6 A2C Panda | PASS | 1713.0s | PandaReachDense_mean=-0.15928514348343015, PandaReachDense_std=0.058832826602861 | results/unit6/ |
 | 8.1 CleanRL PPO | PASS | 11.1s | mean_reward=-231.0672619366657, std_reward=107.20504105552129, total_timesteps=5 | results/unit8_part1/ |
 | 8.2 VizDoom SF | PASS | 190.0s | final_avg=25.258, best=25.632, replay=True | /home/libing/source/ml/rl/deep-rl-class/notebooks/results/unit8_part2 |
+| mario 1-1 PPO | PASS | 4230.8s | x_pos=899, reward=812, flag=False | results/mario/ |
 
 ---
 
@@ -22,11 +23,11 @@ Policy: no Hugging Face Hub push; local artifacts only.
 ### Unit 1
 
 - **Status**: PASS
-- **Started**: 2026-08-31T08:54:52+08:00
-- **Ended**: 2026-08-31T09:01:53+08:00
-- **Duration (s)**: 420.22051978111267
-- **Metrics**: {'mean_reward': 240.12335464081497, 'std_reward': 25.63439913602216}
-- **Artifacts**: results/unit1/
+- **Started**: 2026-08-31T23:14:21+08:00
+- **Ended**: 2026-08-31T23:20:32+08:00
+- **Duration (s)**: 371.2920515537262
+- **Metrics**: {'mean_reward': 256.5946796237051, 'std_reward': 15.161667885356957}
+- **Artifacts**: /home/libing/source/ml/rl/deep-rl-class/notebooks/results/unit1
 - **Notes**: LunarLander-v3 (gymnasium); 1M timesteps
 
 ### Unit 2
@@ -98,3 +99,13 @@ Policy: no Hugging Face Hub push; local artifacts only.
 - **Metrics**: {'env_steps': 4000000, 'final_avg_episode_reward': 25.258, 'best_avg_episode_reward': 25.632, 'replay_mp4': '/home/libing/source/ml/rl/deep-rl-class/notebooks/results/unit8_part2/train_dir/doom_health_gathering_supreme/replay.mp4', 'replay_exists': True}
 - **Artifacts**: /home/libing/source/ml/rl/deep-rl-class/notebooks/results/unit8_part2
 - **Notes**: Sample Factory APPO 4M env steps (~46k fps); enjoy+replay after torch.load weights_only patch
+
+### Unit mario
+
+- **Status**: PASS
+- **Started**: 2026-10-05T06:28:18+08:00
+- **Ended**: 2026-10-05T07:38:48+08:00
+- **Duration (s)**: 4230.779122829437
+- **Metrics**: {'env': 'SuperMarioBros-1-1', 'timesteps': 2000000, 'video_x_pos': 899, 'video_flag': False, 'video_reward': 812.0, 'video': '/home/libing/source/ml/rl/deep-rl-class/notebooks/results/mario/mario-1-1.mp4'}
+- **Artifacts**: /home/libing/source/ml/rl/deep-rl-class/notebooks/results/mario
+- **Notes**: PPO CnnPolicy, SIMPLE_MOVEMENT, frame-skip 4, 84x84x4
