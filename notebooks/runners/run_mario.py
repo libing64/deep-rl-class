@@ -22,23 +22,24 @@ TOTAL_TIMESTEPS = 2_000_000
 N_ENVS = 8
 
 
-def _make_nes():
+def _make_nes(target=(1, 1)):
     from gym_super_mario_bros.actions import SIMPLE_MOVEMENT
     from gym_super_mario_bros.smb_env import SuperMarioBrosEnv
     from nes_py.wrappers import JoypadSpace
 
     # Bypass gym.make: Gym 0.26 TimeLimit expects the 5-tuple step API.
-    return JoypadSpace(SuperMarioBrosEnv(target=(1, 1)), SIMPLE_MOVEMENT)
+    # target=None plays the full game and advances after each flag.
+    return JoypadSpace(SuperMarioBrosEnv(target=target), SIMPLE_MOVEMENT)
 
 
 class MarioEnv(gym.Env):
-    """1-1 stage, discrete simple movement, Gymnasium step API."""
+    """Discrete simple movement, Gymnasium step API."""
 
     metadata = {"render_modes": ["rgb_array"]}
 
-    def __init__(self):
+    def __init__(self, target=(1, 1)):
         super().__init__()
-        self._env = _make_nes()
+        self._env = _make_nes(target)
         self.action_space = spaces.Discrete(self._env.action_space.n)
         self.observation_space = spaces.Box(0, 255, (84, 84, 4), dtype=np.uint8)
         self._frames = np.zeros((84, 84, 4), dtype=np.uint8)
