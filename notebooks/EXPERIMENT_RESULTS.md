@@ -15,7 +15,7 @@ Policy: no Hugging Face Hub push; local artifacts only.
 | 8.1 CleanRL PPO | PASS | 11.1s | mean_reward=-231.0672619366657, std_reward=107.20504105552129, total_timesteps=5 | results/unit8_part1/ |
 | 8.2 VizDoom SF | PASS | 190.0s | final_avg=25.258, best=25.632, replay=True | /home/libing/source/ml/rl/deep-rl-class/notebooks/results/unit8_part2 |
 | mario 1-1 | PASS | 220s search | x_pos=3161, reward=2904, flag=True | results/mario/mario-1-1-flag.mp4 |
-| mario world 1 | RUNNING | 1-2 cleared | reached 1-3, foothold x=564 | results/mario/worlds/mario-reach-1-3.mp4 |
+| mario world 1 | RUNNING | 1-2 cleared | 1-3 foothold x=1385 | results/mario/worlds/mario-reach-1-3.mp4 |
 
 ---
 
@@ -114,6 +114,6 @@ Policy: no Hugging Face Hub push; local artifacts only.
 ### Unit mario worlds
 
 - **Status**: RUNNING
-- **Metrics**: cleared 1-1 and 1-2, entered 1-3, current foothold x=564
+- **Metrics**: cleared 1-1 and 1-2, on 1-3 with foothold x=1385
 - **Video**: /home/libing/source/ml/rl/deep-rl-class/notebooks/results/mario/worlds/mario-reach-1-3.mp4
-- **Notes**: Full-game env continues after each flag. Search replays the farthest safe foothold, then tries new jumps. 1-4 is still ahead.
+- **Notes**: Full-game play with the normal 3 lives. 1-2 is cleared; 1-3 is still being searched from the farthest standing position.
