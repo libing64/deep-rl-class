@@ -15,7 +15,7 @@ Policy: no Hugging Face Hub push; local artifacts only.
 | 8.1 CleanRL PPO | PASS | 11.1s | mean_reward=-231.0672619366657, std_reward=107.20504105552129, total_timesteps=5 | results/unit8_part1/ |
 | 8.2 VizDoom SF | PASS | 190.0s | final_avg=25.258, best=25.632, replay=True | /home/libing/source/ml/rl/deep-rl-class/notebooks/results/unit8_part2 |
 | mario 1-1 | PASS | 220s search | x_pos=3161, reward=2904, flag=True | results/mario/mario-1-1-flag.mp4 |
-| mario worlds | RUNNING | world 1 cleared | entered 2-1 x=306, goal 8-4 | results/mario/worlds/mario-reach-2-1.mp4 |
+| mario worlds | RUNNING | through 2-2 | entered 2-3 x=1031, goal 8-4 | results/mario/worlds/mario-reach-2-3.mp4 |
 
 ---
 
@@ -114,6 +114,6 @@ Policy: no Hugging Face Hub push; local artifacts only.
 ### Unit mario worlds
 
 - **Status**: RUNNING
-- **Metrics**: cleared 1-1 through 1-4, entered 2-1 at x=306
-- **Video**: /home/libing/source/ml/rl/deep-rl-class/notebooks/results/mario/worlds/mario-reach-2-1.mp4
-- **Notes**: Full game, normal 3 lives. Search continues until 8-4 is cleared.
+- **Metrics**: cleared through 2-2, entered 2-3 at x=1031
+- **Video**: /home/libing/source/ml/rl/deep-rl-class/notebooks/results/mario/worlds/mario-reach-2-3.mp4
+- **Notes**: Full game, normal 3 lives. Water stages 2-2 and 7-2 use swim search. Continues until 8-4.

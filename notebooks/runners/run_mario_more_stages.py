@@ -22,6 +22,8 @@ ROOT = Path(__file__).resolve().parents[1] / "results" / "mario"
 OUT = ROOT / "worlds"
 # 8 worlds × 4 stages. Done once play has moved past 8-4.
 TOTAL_STAGES = 32
+# Underwater stages. Mario swims here, so a flat-footed jump search does not move.
+WATER_STAGES = {(2, 2), (7, 2)}
 
 
 def stage_index(world: int, stage: int) -> int:
@@ -42,6 +44,27 @@ def campaign_done(episode) -> bool:
     return bool(episode.get("game_clear")) or stage_index(episode["world"], episode["stage"]) >= TOTAL_STAGES
 
 
+def _is_water(world: int, stage: int) -> bool:
+    return (int(world), int(stage)) in WATER_STAGES
+
+
+def _survives(i: int, xs, ys, stages, lookahead: int = 8) -> bool:
+    """True when this frame is not the start of a death.
+
+    Water never gives a flat foothold, so progress is the farthest x that is
+    still alive a few steps later.
+    """
+    if not (20 <= ys[i] <= 230):
+        return False
+    end = min(len(xs) - 1, i + lookahead)
+    for j in range(i, end + 1):
+        if ys[j] >= 240:
+            return False
+        if j > i and stages[j] == stages[i] and xs[j] + 120 < xs[i]:
+            return False
+    return True
+
+
 def pack(actions, worlds, stages, xs, reward, ys=None, flags=None) -> dict:
     actions = [int(a) for a in actions]
     worlds = [int(w) for w in worlds]
@@ -60,14 +83,17 @@ def pack(actions, worlds, stages, xs, reward, ys=None, flags=None) -> dict:
                 break
             sc = score_of(worlds[i], stages[i], xs[i])
             advanced = stage_index(worlds[i], stages[i]) > stage_index(worlds[peak], stages[peak])
-            stable = (
-                i >= 2
-                and 40 <= ys[i] <= 200
-                and abs(ys[i] - ys[i - 1]) <= 4
-                and abs(ys[i - 1] - ys[i - 2]) <= 4
-            )
+            if _is_water(worlds[i], stages[i]):
+                kept = _survives(i, xs, ys, stages) or advanced
+            else:
+                kept = advanced or (
+                    i >= 2
+                    and 40 <= ys[i] <= 200
+                    and abs(ys[i] - ys[i - 1]) <= 4
+                    and abs(ys[i - 1] - ys[i - 2]) <= 4
+                )
             # Falling into a pit still increases x. Only keep a foothold or a new stage.
-            if (stable or advanced) and sc > best_score:
+            if kept and sc > best_score:
                 best_score = sc
                 peak = i
         actions = actions[: peak + 1]
@@ -95,8 +121,16 @@ def pack(actions, worlds, stages, xs, reward, ys=None, flags=None) -> dict:
     }
 
 
-def explore_action(env) -> int:
+def explore_action(env, world: int = 1, stage: int = 1) -> int:
     roll = np.random.rand()
+    if _is_water(world, stage):
+        if roll < 0.50:
+            return 1  # swim right
+        if roll < 0.85:
+            return 2  # swim right and rise
+        if roll < 0.95:
+            return 5  # rise
+        return int(env.action_space.sample())
     if roll < 0.55:
         return 4  # run + jump
     if roll < 0.75:
@@ -106,6 +140,20 @@ def explore_action(env) -> int:
     return int(env.action_space.sample())
 
 
+def _swim_tails() -> list:
+    tails = [[1] * n for n in (24, 40, 64)]
+    for gap in (3, 5, 8):
+        for rise in (1, 2, 3):
+            right_rise = []
+            only_rise = []
+            for _ in range(10):
+                right_rise += [1] * gap + [2] * rise
+                only_rise += [1] * gap + [5] * rise
+            tails.append(right_rise)
+            tails.append(only_rise)
+    return tails
+
+
 def run_episode(model, prefix, explore_steps: int, epsilon: float, sticky: int) -> dict:
     env = MarioEnv(target=None)
     obs, _ = env.reset()
@@ -113,6 +161,7 @@ def run_episode(model, prefix, explore_steps: int, epsilon: float, sticky: int) 
     reward = 0.0
     sticky_left = 0
     sticky_action = 0
+    here = (1, 1)
     prefix = [int(a) for a in prefix]
     try:
         for t in range(len(prefix) + explore_steps):
@@ -122,7 +171,7 @@ def run_episode(model, prefix, explore_steps: int, epsilon: float, sticky: int) 
                 action = sticky_action
                 sticky_left -= 1
             elif np.random.rand() < epsilon:
-                sticky_action = explore_action(env)
+                sticky_action = explore_action(env, here[0], here[1])
                 sticky_left = max(0, sticky - 1)
                 action = sticky_action
             else:
@@ -135,6 +184,7 @@ def run_episode(model, prefix, explore_steps: int, epsilon: float, sticky: int) 
             xs.append(int(info.get("x_pos", 0)))
             ys.append(int(info.get("y_pos", 100)))
             flags.append(bool(info.get("flag_get", False)))
+            here = (int(info.get("world", 1)), int(info.get("stage", 1)))
             reward += float(step_reward)
             if terminated or truncated:
                 break
@@ -194,11 +244,15 @@ def jump_search(prefix, min_score: int = 0, wide: bool = False) -> dict | None:
                 f"x={info.get('x_pos', 0)} y={info.get('y_pos', 0)} drop={drop}",
                 flush=True,
             )
-            tails = []
-            for wait in (0, 2, 4, 8):
-                for hold in (8, 14, 20, 28):
-                    tails.append([1] * wait + [4] * hold + [1] * 30)
-                    tails.append([3] * min(wait, 6) + [4] * hold + [1] * 24)
+            water = _is_water(info.get("world", 1), info.get("stage", 1))
+            if water:
+                tails = _swim_tails()
+            else:
+                tails = []
+                for wait in (0, 2, 4, 8):
+                    for hold in (8, 14, 20, 28):
+                        tails.append([1] * wait + [4] * hold + [1] * 30)
+                        tails.append([3] * min(wait, 6) + [4] * hold + [1] * 24)
             for tail in tails:
                 nes._restore()
                 nes.done = False
