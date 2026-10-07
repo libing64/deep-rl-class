@@ -65,6 +65,26 @@ def _survives(i: int, xs, ys, stages, lookahead: int = 8) -> bool:
     return True
 
 
+def _grounded(i, ys, worlds, stages, n: int = 8, tol: int = 4) -> bool:
+    """True when Mario stays on a surface, not at the top of a jump.
+
+    Vertical speed is near zero for a few frames at the apex, which used to
+    pass a 3-frame check and freeze the search in mid-air.
+    """
+    if i < 2 or i + n > len(ys):
+        return False
+    y0 = ys[i]
+    if not (40 <= y0 <= 220):
+        return False
+    if abs(ys[i] - ys[i - 1]) > tol or abs(ys[i - 1] - ys[i - 2]) > tol:
+        return False
+    world, stage = worlds[i], stages[i]
+    for j in range(i, i + n):
+        if worlds[j] != world or stages[j] != stage or abs(ys[j] - y0) > tol:
+            return False
+    return True
+
+
 def pack(actions, worlds, stages, xs, reward, ys=None, flags=None) -> dict:
     actions = [int(a) for a in actions]
     worlds = [int(w) for w in worlds]
@@ -86,12 +106,7 @@ def pack(actions, worlds, stages, xs, reward, ys=None, flags=None) -> dict:
             if _is_water(worlds[i], stages[i]):
                 kept = _survives(i, xs, ys, stages) or advanced
             else:
-                kept = advanced or (
-                    i >= 2
-                    and 40 <= ys[i] <= 200
-                    and abs(ys[i] - ys[i - 1]) <= 4
-                    and abs(ys[i - 1] - ys[i - 2]) <= 4
-                )
+                kept = advanced or _grounded(i, ys, worlds, stages)
             # Falling into a pit still increases x. Only keep a foothold or a new stage.
             if kept and sc > best_score:
                 best_score = sc
@@ -253,6 +268,12 @@ def jump_search(prefix, min_score: int = 0, wide: bool = False) -> dict | None:
                     for hold in (8, 14, 20, 28):
                         tails.append([1] * wait + [4] * hold + [1] * 30)
                         tails.append([3] * min(wait, 6) + [4] * hold + [1] * 24)
+                # A pacing koopa occupies the only landing. Stand until it
+                # moves, jump, then stay put so the foothold check can see it.
+                for wait in (16, 28, 40, 48):
+                    for hold in (8, 14):
+                        tails.append([0] * wait + [3] * 3 + [4] * hold + [0] * 20)
+                        tails.append([0] * wait + [4] * hold + [1] * 16)
             for tail in tails:
                 nes._restore()
                 nes.done = False
